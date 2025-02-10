@@ -26,6 +26,9 @@ jobs:
       - name: dotnet publish
         run: dotnet publish GUIDME/GUIDME.csproj -c Release -o ./published
 
+      - name: Verify published directory
+        run: ls -la ./published # Kiểm tra thư mục đã build
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
@@ -45,6 +48,9 @@ jobs:
         with:
           name: .net-app
       
+      - name: Verify downloaded files
+        run: ls -la # Kiểm tra xem file có tải về đúng không
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
