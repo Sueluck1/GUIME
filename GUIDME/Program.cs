@@ -43,7 +43,10 @@ namespace GUIDME
                     options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
                     options.SlidingExpiration = true;  // Reset thời gian hết hạn mỗi khi người dùng hoạt động
                 });
-
+            builder.WebHost.ConfigureKestrel(serverOptions =>
+            {
+                serverOptions.ListenAnyIP(8080); // Luôn lắng nghe trên cổng 8080
+            });
             var app = builder.Build();
 
             // Cấu hình pipeline xử lý yêu cầu HTTP
@@ -53,8 +56,8 @@ namespace GUIDME
                 app.UseHsts();
             }
 
-            var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-            app.Urls.Add($"http://*:{port}");
+           
+
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
