@@ -1,0 +1,529 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\GUIDME.bundle.scp.css",
+      "PackagePath": "staticwebassets\\GUIDME.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\Images\\User\\1.jfif",
+      "PackagePath": "staticwebassets\\Images\\User\\1.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\Images\\User\\4.jpg",
+      "PackagePath": "staticwebassets\\Images\\User\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\TemplateFiles\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\css\\style.css",
+      "PackagePath": "staticwebassets\\TemplateFiles\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\Cau-Rong.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\Cau-Rong.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\about.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\about.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\bg-hero.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\bg-hero.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\booking.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\booking.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\destination-1.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\destination-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\destination-2.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\destination-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\destination-3.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\destination-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\destination-4.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\destination-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\package-1.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\package-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\package-2.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\package-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\package-3.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\package-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\team-1.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\team-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\team-2.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\team-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\team-3.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\team-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\team-4.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\team-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\testimonial-1.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\testimonial-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\testimonial-2.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\testimonial-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\testimonial-3.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\testimonial-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\img\\testimonial-4.jpg",
+      "PackagePath": "staticwebassets\\TemplateFiles\\img\\testimonial-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\TemplateFiles\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\TemplateFiles\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\TemplateFiles\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\js\\jquery-3.4.1.min.js",
+      "PackagePath": "staticwebassets\\TemplateFiles\\js\\jquery-3.4.1.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\js\\main.js",
+      "PackagePath": "staticwebassets\\TemplateFiles\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\animate\\animate.css",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\animate\\animate.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\animate\\animate.min.css",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\animate\\animate.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\easing\\easing.js",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\easing\\easing.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\easing\\easing.min.js",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\easing\\easing.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\owlcarousel\\LICENSE",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\owlcarousel"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\owlcarousel\\assets\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\owlcarousel\\assets\\ajax-loader.gif"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\owlcarousel\\assets\\owl.carousel.css",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\owlcarousel\\assets\\owl.carousel.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\owlcarousel\\assets\\owl.carousel.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\owlcarousel\\assets\\owl.theme.default.css",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\owlcarousel\\assets\\owl.theme.default.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\owlcarousel\\assets\\owl.theme.default.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\owlcarousel\\assets\\owl.theme.green.css",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\owlcarousel\\assets\\owl.theme.green.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\owlcarousel\\assets\\owl.theme.green.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\owlcarousel\\assets\\owl.video.play.png",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\owlcarousel\\assets\\owl.video.play.png"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\owlcarousel\\owl.carousel.js",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\owlcarousel\\owl.carousel.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\owlcarousel\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\owlcarousel\\owl.carousel.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\tempusdominus\\js\\moment-timezone.min.js",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\tempusdominus\\js\\moment-timezone.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\tempusdominus\\js\\moment.min.js",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\tempusdominus\\js\\moment.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\waypoints\\links.php",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\waypoints\\links.php"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\waypoints\\waypoints.min.js",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\waypoints\\waypoints.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\wow\\wow.js",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\wow\\wow.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\TemplateFiles\\lib\\wow\\wow.min.js",
+      "PackagePath": "staticwebassets\\TemplateFiles\\lib\\wow\\wow.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\uploads\\FixedTours\\02094f69-5f83-449d-a145-a6a9f2e0a670_336654491_880582963014290_7313041287191408407_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\FixedTours\\02094f69-5f83-449d-a145-a6a9f2e0a670_336654491_880582963014290_7313041287191408407_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\uploads\\FixedTours\\081ffedb-ebee-4b32-963f-0c91fdb40aaa_316251039_451781847027947_3863278091770516274_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\FixedTours\\081ffedb-ebee-4b32-963f-0c91fdb40aaa_316251039_451781847027947_3863278091770516274_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\uploads\\FixedTours\\13546069-0755-4f8f-b1d3-fcf2f6e122a6_unnamed.png",
+      "PackagePath": "staticwebassets\\uploads\\FixedTours\\13546069-0755-4f8f-b1d3-fcf2f6e122a6_unnamed.png"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\uploads\\FixedTours\\2e853dc4-a3e8-4d20-8e0c-66d957a7d7f5_unnamed.png",
+      "PackagePath": "staticwebassets\\uploads\\FixedTours\\2e853dc4-a3e8-4d20-8e0c-66d957a7d7f5_unnamed.png"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\uploads\\FixedTours\\5df6aeba-359c-4b7d-9678-f6812e92c6bf_316383535_1168684853755294_8759296080267101172_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\FixedTours\\5df6aeba-359c-4b7d-9678-f6812e92c6bf_316383535_1168684853755294_8759296080267101172_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\uploads\\FixedTours\\91c5b3d4-3bb5-416e-a316-d097e09ec56d_316152336_534935181822366_4482896337730710161_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\FixedTours\\91c5b3d4-3bb5-416e-a316-d097e09ec56d_316152336_534935181822366_4482896337730710161_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\uploads\\FixedTours\\9d0c2597-7f25-47ce-a0d3-255f8ff55daf_316195043_465181045751043_8501683595382266730_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\FixedTours\\9d0c2597-7f25-47ce-a0d3-255f8ff55daf_316195043_465181045751043_8501683595382266730_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\uploads\\FixedTours\\a4d2c78f-5367-42ab-96db-7c1d9734260d_316251039_451781847027947_3863278091770516274_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\FixedTours\\a4d2c78f-5367-42ab-96db-7c1d9734260d_316251039_451781847027947_3863278091770516274_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\uploads\\FixedTours\\ad12147c-a1f3-470b-8ba4-750f9dce4189_316383535_1168684853755294_8759296080267101172_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\FixedTours\\ad12147c-a1f3-470b-8ba4-750f9dce4189_316383535_1168684853755294_8759296080267101172_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\uploads\\FixedTours\\aff9692f-3d94-4316-ba0d-93db68fe8be7_unnamed.png",
+      "PackagePath": "staticwebassets\\uploads\\FixedTours\\aff9692f-3d94-4316-ba0d-93db68fe8be7_unnamed.png"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\uploads\\FixedTours\\c2a9efc9-c057-42bb-b06c-dd30cc2c4b0f_316152336_534935181822366_4482896337730710161_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\FixedTours\\c2a9efc9-c057-42bb-b06c-dd30cc2c4b0f_316152336_534935181822366_4482896337730710161_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\uploads\\FixedTours\\e405ac11-4d23-4ff3-9c2f-635531667507_316195043_465181045751043_8501683595382266730_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\FixedTours\\e405ac11-4d23-4ff3-9c2f-635531667507_316195043_465181045751043_8501683595382266730_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\wwwroot\\uploads\\FixedTours\\f0f4eaff-3197-4b02-98e8-e31eeff91613_th (1).jfif",
+      "PackagePath": "staticwebassets\\uploads\\FixedTours\\f0f4eaff-3197-4b02-98e8-e31eeff91613_th (1).jfif"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.GUIDME.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.GUIDME.props",
+      "PackagePath": "build\\GUIDME.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.GUIDME.props",
+      "PackagePath": "buildMultiTargeting\\GUIDME.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.GUIDME.props",
+      "PackagePath": "buildTransitive\\GUIDME.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

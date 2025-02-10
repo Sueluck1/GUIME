@@ -1,0 +1,43 @@
+﻿@page
+@model GUIDME.Pages.Authenthication.RegistrationModel
+@{
+    Layout = "~/Pages/Shared/_CustomerLayout.cshtml";
+    ViewData["PageTitle"] = "Đăng Ký";
+}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h3 class="text-center mb-4">Đăng Ký</h3>
+                    <form method="post" asp-page-handler="Register">
+                        <div class="form-group">
+                            <label for="name"><i class="fa fa-user"></i> Họ và Tên</label>
+                            <input type="text" class="form-control" id="name" name="NewUser.Name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="username"><i class="fa fa-user"></i> Tên Đăng Nhập</label>
+                            <input type="text" class="form-control" id="username" name="NewUser.Username" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                            <input type="email" class="form-control" id="email" name="NewUser.Email" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="password"><i class="fa fa-lock"></i> Mật Khẩu</label>
+                            <input type="password" class="form-control" id="password" name="NewUser.Password" required />
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mt-4">Đăng Ký</button>
+                        <p class="text-center mt-3">Đã có tài khoản? <a href="/Authentication/Login">Đăng nhập tại đây</a></p>
+                    </form>
+
+                    @if (Model.Message != null)
+                    {
+                        <div class="alert alert-info mt-3">@Model.Message</div>
+                    }
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

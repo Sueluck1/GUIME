@@ -1,0 +1,106 @@
+﻿@page
+@model GUIDME.Pages.Admin.FixedTour.TourModel
+@{
+	Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container mt-4">
+    <h2 class="mb-4">Manage Fixed Tours</h2>
+
+    <!-- Nút mở/đóng phần thêm Fixed Tour -->
+    <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#addTourForm">
+        Add Fixed Tour
+    </button>
+
+    <!-- Form thêm Fixed Tour (Mặc định ẩn) -->
+    <div class="collapse" id="addTourForm">
+        <div class="card card-body">
+            <form method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label">Tour Name</label>
+                    <input type="text" class="form-control" name="Name" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Category</label>
+                    <select class="form-control" name="CategoryId" required>
+                        <option value="">-- Select Category --</option>
+                        @foreach (var category in Model.Categories)
+                        {
+                            <option value="@category.CategoryId">@category.Name</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control" name="Description"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Start Date</label>
+                    <input type="date" class="form-control" name="StartDate" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">End Date</label>
+                    <input type="date" class="form-control" name="EndDate" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Price</label>
+                    <input type="number" class="form-control" name="Price" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Tour Images</label>
+                    <input type="file" class="form-control" name="ImageFiles" multiple />
+                </div>
+
+                <button type="submit" class="btn btn-success">Add Tour</button>
+            </form>
+        </div>
+    </div>
+
+    <hr />
+
+    <!-- Danh sách Fixed Tours -->
+    <h3>List of Fixed Tours</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tour in Model.FixedTours)
+            {
+                <tr>
+                    <td>@tour.TourId</td>
+                    <td>@tour.Name</td>
+                    <td>@tour.Description</td>
+                    <td>@tour.StartDate.ToString("dd/MM/yyyy")</td>
+                    <td>@tour.EndDate.ToString("dd/MM/yyyy")</td>
+                    <td>@tour.Price</td>
+
+                    <td>
+                        <a href="/Admin/FixedTour/TourDetail/@tour.TourId" class="btn btn-info btn-sm">View</a>
+                        <a href="/Admin/FixedTour/EditTour?id=@tour.TourId" class="btn btn-warning btn-sm">Edit</a>
+
+                        <a asp-page="/Admin/FixedTour/Tour" asp-page-handler="ToggleActive" asp-route-id="@tour.TourId"
+                           class="btn @(tour.IsActive ? "btn-danger" : "btn-success") btn-sm">
+                            @(tour.IsActive ? "Deactivate" : "Activate")
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

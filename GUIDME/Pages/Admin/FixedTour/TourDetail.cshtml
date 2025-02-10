@@ -1,0 +1,88 @@
+﻿@page "{id:int}"
+@model GUIDME.Pages.Admin.FixedTour.TourDetailModel
+@{
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Tour Details</h2>
+
+    <div class="card">
+        <div class="row g-0">
+            <div class="col-md-6">
+                <div id="tourCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        @if (Model.TourImages.Any())
+                        {
+                            @for (int i = 0; i < Model.TourImages.Count; i++)
+                            {
+                                <div class="carousel-item @(i == 0 ? "active" : "")">
+                                    <img src="@Model.TourImages[i].ImageUrl" class="d-block w-100" alt="Tour Image">
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="carousel-item active">
+                                <img src="/images/default-tour.jpg" class="d-block w-100" alt="No Image">
+                            </div>
+                        }
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#tourCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#tourCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h3 class="card-title">@Model.Tour.Name</h3>
+                    <p class="card-text"><strong>Category:</strong> @Model.Tour.Category.Name</p>
+                    <p class="card-text"><strong>Start Date:</strong> @Model.Tour.StartDate.ToString("dd/MM/yyyy")</p>
+                    <p class="card-text"><strong>End Date:</strong> @Model.Tour.EndDate.ToString("dd/MM/yyyy")</p>
+                    <p class="card-text"><strong>Price:</strong> $@Model.Tour.Price</p>
+                    <p class="card-text"><strong>Description:</strong> @Model.Tour.Description</p>
+                    <a href="/Admin/FixedTour/Tour" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <!-- Danh sách Request của hướng dẫn viên -->
+    <h3 class="mt-4">Guide Requests</h3>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Guide Name</th>
+                <th>Request Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var request in Model.TourGuideRequests)
+            {
+                <tr>
+                    <td>@request.Guide.Name</td>
+                    <td>@request.RequestDate.ToString("dd/MM/yyyy")</td>
+                    <td>@request.Status</td>
+                    <td>
+                        @if (request.Status == "Pending")
+                        {
+                            <form method="post" asp-page-handler="UpdateRequestStatus">
+                                <input type="hidden" name="requestId" value="@request.TourGuideId" />
+                                <button type="submit" name="status" value="Approved" class="btn btn-success btn-sm">Approve</button>
+                                <button type="submit" name="status" value="Rejected" class="btn btn-danger btn-sm">Reject</button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,20 @@
+﻿@page
+@model GUIDME.Pages.Authenthication.ConfirmEmailModel
+@{
+    Layout = "~/Pages/Shared/_CustomerLayout.cshtml";
+    ViewData["PageTitle"] = "Xác Nhận Email";
+}
+@if (Model.IsConfirmed)
+{
+    <div class="alert alert-success">
+        <h4 class="alert-heading">Xác nhận Email thành công!</h4>
+        <p>Chúc mừng! Email của bạn đã được xác nhận thành công. Bây giờ bạn có thể đăng nhập vào tài khoản của mình.</p>
+    </div>
+}
+else
+{
+    <div class="alert alert-danger">
+        <h4 class="alert-heading">Lỗi xác nhận</h4>
+        <p>Liên kết xác nhận không hợp lệ hoặc đã hết hạn. Vui lòng kiểm tra lại email của bạn hoặc yêu cầu một mã xác nhận mới.</p>
+    </div>
+}

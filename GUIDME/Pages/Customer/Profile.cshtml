@@ -1,0 +1,132 @@
+﻿@page
+@model GUIDME.Pages.Customer.ProfileModel
+@{
+    Layout = "/Pages/Shared/_CustomerLayout.cshtml";
+    ViewData["PageTitle"] = "Thông Tin người dùng";
+}
+<section class="profile_section layout_padding">    
+    <div class="container">
+        <div class="heading_container">
+            <h2>Thông Tin Người Dùng</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <div class="card-title mb-4">
+                            <div class="d-flex justify-content-start">
+                                <div class="image-container">
+                                    <img src="@Model.UserProfile.ImageUrl" id="imgProfile" style="width: 150px; height: 150px;" class="img-thumbnail" />
+                                    <div class="middle pt-2">
+                                        <a href="/Customer/UpdateProfile" class="btn btn-warning">
+                                            <i class="fa fa-pencil"></i> Chỉnh sửa thông tin
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="userData ml-3">
+                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold">
+                                        <a href="javascript:void(0);">@Model.UserProfile.Name</a>
+                                    </h2>
+                                    <h6 class="d-block"><i class="fa fa-user"></i> @Model.UserProfile.Username</h6>
+                                    <h6 class="d-block"><i class="fa fa-envelope"></i> @Model.UserProfile.Email</h6>
+                                    <h6 class="d-block"><i class="fa fa-calendar"></i> Đã tham gia: @Model.UserProfile.CreatedDate.ToString("dd/MM/yyyy")</h6>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <ul class="nav nav-tabs mb-4" id="profileTabs" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active text-info" id="userInfo-tab" data-bs-toggle="tab" href="#userInfo" role="tab" aria-controls="userInfo" aria-selected="true">
+                                                <i class="fa fa-id-badge mr-2"></i>Thông tin cá nhân
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-info" id="bookingHistory-tab" data-bs-toggle="tab" href="#bookingHistory" role="tab" aria-controls="bookingHistory" aria-selected="false">
+                                                <i class="fa fa-plane mr-2"></i>Lịch sử đặt tour
+                                            </a>
+                                        </li>
+                                    </ul>
+
+
+                                    <div class="tab-content ml-1" id="profileTabContent">
+                                        <!-- Thông tin cá nhân -->
+                                        <div class="tab-pane fade show active" id="userInfo" role="tabpanel" aria-labelledby="userInfo-tab">
+                                            <div class="row">
+                                                <div class="col-6"><strong>Họ và tên:</strong> @Model.UserProfile.Name</div>
+                                                <div class="col-6"><strong>Tên đăng nhập:</strong> @Model.UserProfile.Username</div>
+                                                <div class="col-6"><strong>Email:</strong> @Model.UserProfile.Email</div>
+                                                <div class="col-6"><strong>Điện thoại:</strong> @Model.UserProfile.Mobile</div>
+                                                <div class="col-6"><strong>Địa chỉ:</strong> @Model.UserProfile.Address</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Lịch sử đặt tour -->
+                                        <div class="tab-pane fade" id="bookingHistory" role="tabpanel" aria-labelledby="bookingHistory-tab">
+                                            <h5>Lịch sử đặt tour</h5>
+                                            <ul class="list-group">
+                                                @foreach (var booking in Model.BookingHistory)
+                                                {
+                                                    <li class="list-group-item">
+                                                        <div class="booking-summary mb-3">
+                                                            <p><strong>Mã đặt chỗ:</strong> @booking.BookingId</p>
+                                                            <p>
+                                                                <strong>Trạng thái:</strong>
+                                                                <span class="badge @(booking.Status == "Completed" ? "bg-success text-light"
+                    : booking.Status == "Cancelled" ? "bg-danger text-light"
+                    : "bg-warning text-dark")">
+                                                                    @booking.Status
+                                                                </span>
+
+
+                                                            </p>
+                                                            <p><strong>Ngày đặt:</strong> @booking.BookingDate.ToString("dd/MM/yyyy")</p>
+                                                            <p><strong>Ngày đi tour:</strong> @booking.TourDate.ToString("dd/MM/yyyy")</p>
+                                                            <p><strong>Số người:</strong> @booking.NumberOfPeople</p>
+
+                                                            <!-- Hiển thị thông tin tour -->
+                                                            <table class="table table-bordered mt-2">
+                                                                <thead class="thead-dark">
+                                                                    <tr>
+                                                                        <th>Tên tour</th>
+                                                                        <th>Giá tour</th>
+                                                                        <th>Số người</th>
+                                                                        <th>Tổng tiền</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>@booking.Tour.Name</td>
+                                                                        <td>@booking.Tour.Price</td>
+                                                                        <td>@booking.NumberOfPeople</td>
+                                                                        <td>@((booking.Tour.Price * booking.NumberOfPeople))</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+
+                                                            <!-- Nút hủy tour nếu chưa hoàn thành -->
+                                                            @if (booking.Status == "Pending")
+                                                            {
+                                                                <form method="post" asp-page-handler="CancelBooking">
+                                                                    <input type="hidden" name="bookingId" value="@booking.BookingId" />
+                                                                    <button type="submit" class="btn btn-danger btn-sm">Hủy đặt chỗ</button>
+                                                                </form>
+                                                            }
+                                                        </div>
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </div>
+
+                                    </div> <!-- Kết thúc tab-content -->
+                                </div>
+                            </div> <!-- Kết thúc row -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

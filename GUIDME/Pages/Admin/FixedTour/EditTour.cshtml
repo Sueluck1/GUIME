@@ -1,0 +1,59 @@
+﻿@page
+@model GUIDME.Pages.Admin.FixedTour.EditTourModel
+@{
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2>Edit Fixed Tour</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Tour.TourId" />
+
+        <div class="mb-3">
+            <label class="form-label">Tour Name</label>
+            <input type="text" class="form-control" asp-for="Tour.Name" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" asp-for="Tour.Description"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Start Date</label>
+            <input type="date" class="form-control" asp-for="Tour.StartDate" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">End Date</label>
+            <input type="date" class="form-control" asp-for="Tour.EndDate" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input type="number" class="form-control" asp-for="Tour.Price" required />
+        </div>
+
+        <!-- Hiển thị danh sách ảnh hiện tại -->
+        <div class="mb-3">
+            <label class="form-label">Current Images</label>
+            <div class="d-flex flex-wrap">
+                @foreach (var image in Model.TourImages)
+                {
+                    <div class="me-2">
+                        <img src="@image.ImageUrl" class="img-thumbnail" width="100" height="100" />
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Upload ảnh mới -->
+        <div class="mb-3">
+            <label class="form-label">Upload New Images</label>
+            <input type="file" class="form-control" asp-for="ImageFiles" multiple />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>

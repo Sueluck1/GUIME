@@ -1,0 +1,64 @@
+﻿@page
+@model GUIDME.Pages.Authenthication.LoginModel
+@{
+    Layout = "~/Pages/Shared/_CustomerLayout.cshtml";
+    ViewData["PageTitle"] = "Đăng Nhập";
+}
+
+
+<body class="login-page">
+    <section class="book_section layout_padding">
+        <div class="container">
+            <div class="heading_container">
+                <div class="align-self-end">
+                    <span id="lblMsg" class="text-danger">@Model.Message</span>
+                </div>
+                <h2>Login</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form_container">
+                        <img id="userLogin" src="~/TemplateFiles/images/login.jpg" alt="" class="img-thumbnail" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form_container">
+                        <form method="post" class="p-4 border rounded shadow-lg bg-white">
+                            <h3 class="text-center text-primary mb-4">Đăng Nhập</h3>
+
+                            <div class="mb-3">
+                                <label asp-for="Username" class="form-label fw-bold"><i class="fa fa-user"></i> Tên đăng nhập</label>
+                                <input asp-for="Username" class="form-control form-control-lg" placeholder="Nhập tên đăng nhập" />
+                                <span asp-validation-for="Username" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="Password" class="form-label fw-bold"><i class="fa fa-lock"></i> Mật khẩu</label>
+                                <input asp-for="Password" class="form-control form-control-lg" placeholder="Nhập mật khẩu" type="password" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fa fa-sign-in-alt"></i> Đăng Nhập
+                                </button>
+                            </div>
+
+                            <div class="text-center mt-3">
+                                <span class="text-secondary">
+                                    Chưa có tài khoản?
+                                    <a href="/Authentication/Registration" class="text-primary fw-bold">Đăng ký ngay</a>
+                                </span>
+                                <br>
+                                <span class="text-secondary">
+                                    <a href="/Authentication/ForgotPassword" class="text-danger fw-bold">Quên mật khẩu?</a>
+                                </span>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>

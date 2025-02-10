@@ -1,0 +1,39 @@
+﻿@page
+@model GUIDME.Pages.Guide.FixedTour.TourModel
+@{
+    Layout = "~/Pages/Shared/_GuideLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Available Tours</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tour in Model.Tours)
+            {
+                <tr>
+                    <td>@tour.TourId</td>
+                    <td>@tour.Name</td>
+                    <td>@tour.Description</td>
+                    <td>@tour.StartDate.ToString("dd/MM/yyyy")</td>
+                    <td>@tour.EndDate.ToString("dd/MM/yyyy")</td>
+                    <td>$@tour.Price</td>
+                    <td>
+                        <a asp-page="./RequestForTour" asp-route-id="@tour.TourId" class="btn btn-primary btn-sm">View & Request</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

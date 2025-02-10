@@ -1,0 +1,126 @@
+﻿@page
+@model GUIDME.Pages.Guide.DashboardModel
+@{
+    Layout = "~/Pages/Shared/_GuideLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Admin Dashboard</h2>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-header">Users</div>
+                <div class="card-body">
+                    <h5 class="card-title">@Model.UserCount</h5>
+                    <p class="card-text">Total registered users</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-header">Tours</div>
+                <div class="card-body">
+                    <h5 class="card-title">@Model.TourCount</h5>
+                    <p class="card-text">Total tours available</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-header">Bookings</div>
+                <div class="card-body">
+                    <h5 class="card-title">@Model.BookingCount</h5>
+                    <p class="card-text">Total bookings made</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-header">Payments</div>
+                <div class="card-body">
+                    <h5 class="card-title">@Model.PaymentCount</h5>
+                    <p class="card-text">Total payments processed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Biểu đồ -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <canvas id="statsChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Bộ lọc dữ liệu -->
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <select id="filterStatus" class="form-control">
+                <option value="">All Status</option>
+                <option value="Pending">Pending</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Cancelled">Cancelled</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">Recent Bookings</div>
+                <div class="card-body">
+                    <table class="table table-striped" id="bookingsTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>User</th>
+                                <th>Tour</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var booking in Model.RecentBookings)
+                            {
+                                <tr class="booking-row" data-status="@booking.Status">
+                                    <td>@booking.BookingId</td>
+                                    <td>@booking.UserName</td>
+                                    <td>@booking.TourName</td>
+                                    <td>@booking.BookingDate.ToString("dd/MM/yyyy")</td>
+                                    <td>@booking.Status</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var ctx = document.getElementById("statsChart").getContext("2d");
+        var chart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: ["Users", "Tours", "Bookings", "Payments"],
+                datasets: [{
+                    label: "Total Count",
+                    data: [@Model.UserCount, @Model.TourCount, @Model.BookingCount, @Model.PaymentCount],
+                    backgroundColor: ["#007bff", "#28a745", "#ffc107", "#dc3545"]
+                }]
+            }
+        });
+
+        // Bộ lọc bookings
+        document.getElementById("filterStatus").addEventListener("change", function () {
+            let status = this.value;
+            document.querySelectorAll(".booking-row").forEach(row => {
+                row.style.display = (status === "" || row.dataset.status === status) ? "" : "none";
+            });
+        });
+    });
+</script>
