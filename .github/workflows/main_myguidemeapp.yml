@@ -23,17 +23,17 @@ jobs:
       - name: Build with dotnet
         run: dotnet build --configuration Release GUIDME/GUIDME.csproj
 
-      - name: dotnet publish
-        run: dotnet publish GUIDME/GUIDME.csproj -c Release -o ./published
+      - name: Publish Web App
+        run: dotnet publish GUIDME/GUIDME.csproj -c Release -o $(pwd)/publish_output
 
-      - name: Verify published directory
-        run: ls -la ./published # Kiểm tra thư mục đã build
+      - name: Verify published output
+        run: ls -la $(pwd)/publish_output # Kiểm tra file output có tồn tại không
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: .net-app
-          path: ./published
+          name: dotnet-app
+          path: $(pwd)/publish_output
 
   deploy:
     runs-on: ubuntu-latest
@@ -46,10 +46,11 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: .net-app
-      
+          name: dotnet-app
+          path: $(pwd)/deploy_output # Tải file về thư mục deploy_output
+
       - name: Verify downloaded files
-        run: ls -la # Kiểm tra xem file có tải về đúng không
+        run: ls -la $(pwd)/deploy_output # Kiểm tra xem file có tải về đúng không
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -57,5 +58,5 @@ jobs:
         with:
           app-name: 'myGuideMeApp'
           slot-name: 'Production'
-          package: ./published
+          package: $(pwd)/deploy_output
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_081124B7B52448FCBF6850C752CDF781 }}
