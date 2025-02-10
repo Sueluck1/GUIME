@@ -24,16 +24,22 @@ jobs:
         run: dotnet build --configuration Release GUIDME/GUIDME.csproj
 
       - name: Publish Web App
-        run: dotnet publish GUIDME/GUIDME.csproj -c Release -o $(pwd)/publish_output
+        run: dotnet publish GUIDME/GUIDME.csproj -c Release -o ./publish_output
 
       - name: Verify published output
-        run: ls -la $(pwd)/publish_output # Kiểm tra file output có tồn tại không
+        run: |
+          echo "Checking if publish_output exists..."
+          ls -la ./publish_output # Kiểm tra file output có tồn tại không
+          if [ -z "$(ls -A ./publish_output)" ]; then
+            echo "❌ No files found in ./publish_output"
+            exit 1
+          fi
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: dotnet-app
-          path: $(pwd)/publish_output
+          path: ./publish_output
 
   deploy:
     runs-on: ubuntu-latest
@@ -47,10 +53,16 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dotnet-app
-          path: $(pwd)/deploy_output # Tải file về thư mục deploy_output
+          path: ./deploy_output # Tải file về thư mục deploy_output
 
       - name: Verify downloaded files
-        run: ls -la $(pwd)/deploy_output # Kiểm tra xem file có tải về đúng không
+        run: |
+          echo "Checking if deploy_output exists..."
+          ls -la ./deploy_output
+          if [ -z "$(ls -A ./deploy_output)" ]; then
+            echo "❌ No files found in ./deploy_output"
+            exit 1
+          fi
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -58,5 +70,5 @@ jobs:
         with:
           app-name: 'myGuideMeApp'
           slot-name: 'Production'
-          package: $(pwd)/deploy_output
+          package: ./deploy_output
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_081124B7B52448FCBF6850C752CDF781 }}
