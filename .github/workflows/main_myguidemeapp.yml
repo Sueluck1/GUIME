@@ -54,5 +54,5 @@ jobs:
         with:
           app-name: 'myGuideMeApp'
           slot-name: 'Production'
-          package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C65964B59D01415FA9B3A49A4E352B30 }}
+          package: ${{ env.DOTNET_ROOT }}/myapp
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_081124B7B52448FCBF6850C752CDF781 }}
