@@ -1,0 +1,67 @@
+# 🏗️ Bỏ qua thư mục build & biên dịch
+bin/
+obj/
+out/
+publish/
+TestResults/
+*.exe
+*.dll
+*.pdb
+*.appx
+*.msi
+*.iso
+
+# 🖥️ Bỏ qua file của Visual Studio & JetBrains Rider
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.cache
+*.sln.ide
+*.vscode/
+
+# 🔧 Bỏ qua file log & dữ liệu tạm thời
+*.log
+*.tlog
+*.nlog
+*.cache
+*.tmp
+*.lock
+
+# 🔐 Bỏ qua file cấu hình cá nhân & secrets (bảo mật API, Database)
+appsettings.*.json
+secrets.json
+
+# 📂 Bỏ qua file backup & hệ thống
+*.bak
+*.db
+*.sql
+*.mdf
+*.ldf
+*.sqlite
+*.swp
+*.DS_Store
+Thumbs.db
+
+# 🐳 Bỏ qua file của môi trường Docker
+docker-compose.override.yml
+*.dockerfile
+*.dockerignore
+
+# 🚀 Bỏ qua Node.js & npm (nếu có frontend)
+node_modules/
+npm-debug.log
+yarn.lock
+package-lock.json
+
+# 🌐 Bỏ qua các thư mục build của frontend
+dist/
+build/
+coverage/
+
+# 🔬 Bỏ qua Python Virtual Environment (nếu có AI/ML)
+venv/
+.env
+*.pyc
+__pycache__/

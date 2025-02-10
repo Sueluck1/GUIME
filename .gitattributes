@@ -1,2 +1,46 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# 🌍 Đảm bảo file mã nguồn sử dụng LF để tránh lỗi trên Windows/Mac/Linux
+*.cs text eol=lf
+*.csproj text eol=lf
+*.sln text eol=lf
+*.json text eol=lf
+*.xml text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.md text eol=lf
+
+# 📦 Giữ nguyên định dạng file binary (không chỉnh sửa)
+*.dll binary
+*.exe binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.eot binary
+*.ttf binary
+*.mp4 binary
+*.mp3 binary
+*.zip binary
+*.tar.gz binary
+
+# 🏗️ Bỏ qua các file tạm thời của Visual Studio
+.vs/ export-ignore
+*.user export-ignore
+*.suo export-ignore
+*.cache export-ignore
+*.pdb export-ignore
+*.obj export-ignore
+*.log export-ignore
+*.tlog export-ignore
+*.ipch export-ignore
+*.ilk export-ignore
+*.exp export-ignore
+
+# 🚀 Bỏ qua thư mục build
+bin/ export-ignore
+obj/ export-ignore
+publish/ export-ignore
+TestResults/ export-ignore
