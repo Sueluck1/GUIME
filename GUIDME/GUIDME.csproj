@@ -9,10 +9,10 @@
 
   <ItemGroup>
     <Folder Include="Pages\Customer\CustomTour\" />
-    <Folder Include="Pages\Customer\FixedTour\" />
     <Folder Include="Pages\Customer\BookingTourGuide\" />
     <Folder Include="wwwroot\Images\User\" />
     <Folder Include="wwwroot\uploads\FixedTours\" />
+    <Folder Include="wwwroot\uploads\Thumbnails\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -67,7 +67,7 @@ namespace GUIDME.Pages.Authenthication
                 }
                 else
                 {
-                    return RedirectToPage("/Customer/Profile");
+                    return RedirectToPage("/Customer/Index");
                 }
 
             }

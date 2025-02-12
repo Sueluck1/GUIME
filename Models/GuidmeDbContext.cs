@@ -27,7 +27,7 @@ namespace Models
             {
                 var configuration = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("appsettings.json")
+                    .AddJsonFile("appsetting.json")
                     .Build();
 
                 string connectionString = configuration.GetConnectionString("DefaultConnection");

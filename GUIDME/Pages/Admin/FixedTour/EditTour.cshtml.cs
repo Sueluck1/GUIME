@@ -19,7 +19,10 @@ namespace GUIDME.Pages.Admin.FixedTour
         public Tour Tour { get; set; }
 
         [BindProperty]
-        public List<IFormFile> ImageFiles { get; set; }
+        public List<IFormFile> ImageFiles { get; set; } = new List<IFormFile>();
+
+        [BindProperty]
+        public IFormFile? ThumbnailFile { get; set; } // Ảnh đại diện của tour
 
         public List<TourImage> TourImages { get; set; } = new List<TourImage>();
 
@@ -45,8 +48,6 @@ namespace GUIDME.Pages.Admin.FixedTour
 
         public async Task<IActionResult> OnPostAsync()
         {
-           
-
             var existingTour = await _tourRepository.GetTourById(Tour.TourId);
             if (existingTour == null)
             {
@@ -59,6 +60,22 @@ namespace GUIDME.Pages.Admin.FixedTour
             existingTour.StartDate = Tour.StartDate;
             existingTour.EndDate = Tour.EndDate;
             existingTour.Price = Tour.Price;
+
+            // Xử lý tải ảnh Thumbnail nếu có
+            if (ThumbnailFile != null)
+            {
+                var thumbnailFileName = $"{Guid.NewGuid()}_{ThumbnailFile.FileName}";
+                var thumbnailFilePath = Path.Combine("wwwroot/uploads/Thumbnails", thumbnailFileName);
+
+                // Lưu file ảnh vào thư mục
+                using (var stream = new FileStream(thumbnailFilePath, FileMode.Create))
+                {
+                    await ThumbnailFile.CopyToAsync(stream);
+                }
+
+                // Lưu đường dẫn ảnh Thumbnail vào database
+                existingTour.ThumbnailUrl = $"/uploads/Thumbnails/{thumbnailFileName}";
+            }
 
             await _tourRepository.Update(existingTour);
 

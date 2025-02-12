@@ -1,31 +1,30 @@
 ﻿@page
 @model GUIDME.Pages.Admin.FixedTour.TourModel
 @{
-	Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
 }
 
-
 <div class="container mt-4">
-    <h2 class="mb-4">Manage Fixed Tours</h2>
+    <h2 class="mb-4">Quản Lý Tour Cố Định</h2>
 
-    <!-- Nút mở/đóng phần thêm Fixed Tour -->
+    <!-- Nút mở/đóng phần thêm Tour Cố Định -->
     <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#addTourForm">
-        Add Fixed Tour
+        Thêm Tour Cố Định
     </button>
 
-    <!-- Form thêm Fixed Tour (Mặc định ẩn) -->
+    <!-- Form thêm Tour Cố Định (Mặc định ẩn) -->
     <div class="collapse" id="addTourForm">
         <div class="card card-body">
             <form method="post" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <label class="form-label">Tour Name</label>
+                    <label class="form-label">Tên Tour</label>
                     <input type="text" class="form-control" name="Name" required />
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Category</label>
+                    <label class="form-label">Danh Mục</label>
                     <select class="form-control" name="CategoryId" required>
-                        <option value="">-- Select Category --</option>
+                        <option value="">-- Chọn Danh Mục --</option>
                         @foreach (var category in Model.Categories)
                         {
                             <option value="@category.CategoryId">@category.Name</option>
@@ -34,49 +33,49 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Description</label>
+                    <label class="form-label">Mô Tả</label>
                     <textarea class="form-control" name="Description"></textarea>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Start Date</label>
+                    <label class="form-label">Ngày Bắt Đầu</label>
                     <input type="date" class="form-control" name="StartDate" required />
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">End Date</label>
+                    <label class="form-label">Ngày Kết Thúc</label>
                     <input type="date" class="form-control" name="EndDate" required />
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Price</label>
+                    <label class="form-label">Giá</label>
                     <input type="number" class="form-control" name="Price" required />
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Tour Images</label>
+                    <label class="form-label">Hình Ảnh Tour</label>
                     <input type="file" class="form-control" name="ImageFiles" multiple />
                 </div>
 
-                <button type="submit" class="btn btn-success">Add Tour</button>
+                <button type="submit" class="btn btn-success">Thêm Tour</button>
             </form>
         </div>
     </div>
 
     <hr />
 
-    <!-- Danh sách Fixed Tours -->
-    <h3>List of Fixed Tours</h3>
+    <!-- Danh sách Tour Cố Định -->
+    <h3>Danh Sách Tour Cố Định</h3>
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>#</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Start Date</th>
-                <th>End Date</th>
-                <th>Price</th>
-                <th>Actions</th>
+                <th>Tên</th>
+                <th>Mô Tả</th>
+                <th>Ngày Bắt Đầu</th>
+                <th>Ngày Kết Thúc</th>
+                <th>Giá</th>
+                <th>Thao Tác</th>
             </tr>
         </thead>
         <tbody>
@@ -91,12 +90,12 @@
                     <td>@tour.Price</td>
 
                     <td>
-                        <a href="/Admin/FixedTour/TourDetail/@tour.TourId" class="btn btn-info btn-sm">View</a>
-                        <a href="/Admin/FixedTour/EditTour?id=@tour.TourId" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="/Admin/FixedTour/TourDetail/@tour.TourId" class="btn btn-info btn-sm">Xem</a>
+                        <a href="/Admin/FixedTour/EditTour?id=@tour.TourId" class="btn btn-warning btn-sm">Chỉnh Sửa</a>
 
                         <a asp-page="/Admin/FixedTour/Tour" asp-page-handler="ToggleActive" asp-route-id="@tour.TourId"
                            class="btn @(tour.IsActive ? "btn-danger" : "btn-success") btn-sm">
-                            @(tour.IsActive ? "Deactivate" : "Activate")
+                            @(tour.IsActive ? "Hủy Kích Hoạt" : "Kích Hoạt")
                         </a>
                     </td>
                 </tr>

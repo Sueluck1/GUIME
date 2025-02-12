@@ -1,0 +1,57 @@
+﻿@page
+@model GUIDME.Pages.Customer.FixedTour.TourModel
+@{
+    Layout = "~/Pages/Shared/_CustomerLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Danh Sách Tour Cố Định</h2>
+
+    <!-- Bộ lọc và sắp xếp -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <button class="btn btn-outline-dark">Chọn Ngày</button>
+            <button class="btn btn-outline-dark">Tất Cả Bộ Lọc</button>
+            <button class="btn btn-outline-dark">Ngôn Ngữ</button>
+        </div>
+        <div>
+            <span>200+ Kết Quả</span>
+            <select class="form-select d-inline-block w-auto">
+                <option value="featured">Sắp xếp: Nổi bật</option>
+                <option value="price-low">Giá thấp nhất</option>
+                <option value="price-high">Giá cao nhất</option>
+                <option value="rating">Đánh giá cao nhất</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Danh sách các tour -->
+    <div class="row">
+        @foreach (var tour in Model.Tours)
+        {
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <!-- Nếu có nhãn "Sắp hết chỗ" -->
+                    @if (tour.IsPopular)
+                    {
+                        <div class="position-absolute bg-danger text-white p-1" style="top: 10px; left: 10px; font-size: 12px; border-radius: 5px;">
+                            Sắp Hết Chỗ
+                        </div>
+                    }
+                    <img src="@tour.ThumbnailUrl" class="card-img-top" alt="Tour Image" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <p class="text-success fw-bold">
+                            ⭐ @tour.Rating (@tour.ReviewCount.ToString("N0"))
+                        </p>
+                        <h6 class="card-title">@tour.Name</h6>
+                        <p class="text-muted">
+                            ⏳ @tour.Duration
+                        </p>
+                        <p class="fw-bold">Từ @tour.Price</p>
+                        <a href="/Customer/FixedTour/Detail/@tour.TourId" class="btn btn-outline-primary w-100">Xem Chi Tiết</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

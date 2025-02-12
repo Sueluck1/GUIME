@@ -5,18 +5,18 @@
 }
 
 <div class="container mt-4">
-    <h2 class="mb-4">Available Tours</h2>
+    <h2 class="mb-4">Danh Sách Tour Có Sẵn</h2>
 
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>#</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Start Date</th>
-                <th>End Date</th>
-                <th>Price</th>
-                <th>Actions</th>
+                <th>Tên</th>
+                <th>Mô Tả</th>
+                <th>Ngày Bắt Đầu</th>
+                <th>Ngày Kết Thúc</th>
+                <th>Giá</th>
+                <th>Thao Tác</th>
             </tr>
         </thead>
         <tbody>
@@ -28,9 +28,9 @@
                     <td>@tour.Description</td>
                     <td>@tour.StartDate.ToString("dd/MM/yyyy")</td>
                     <td>@tour.EndDate.ToString("dd/MM/yyyy")</td>
-                    <td>$@tour.Price</td>
+                    <td>@tour.Price</td>
                     <td>
-                        <a asp-page="./RequestForTour" asp-route-id="@tour.TourId" class="btn btn-primary btn-sm">View & Request</a>
+                        <a asp-page="./RequestForTour" asp-route-id="@tour.TourId" class="btn btn-primary btn-sm">Xem & Yêu Cầu</a>
                     </td>
                 </tr>
             }

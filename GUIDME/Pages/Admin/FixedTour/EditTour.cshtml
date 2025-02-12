@@ -5,39 +5,50 @@
 }
 
 <div class="container mt-4">
-    <h2>Edit Fixed Tour</h2>
+    <h2>Chỉnh Sửa Tour Cố Định</h2>
 
     <form method="post" enctype="multipart/form-data">
         <input type="hidden" asp-for="Tour.TourId" />
+        <div class="mb-3">
+            <label class="form-label">Ảnh Thumbnail</label>
+            @if (!string.IsNullOrEmpty(Model.Tour.ThumbnailUrl))
+            {
+                <div>
+                    <img src="@Model.Tour.ThumbnailUrl" class="img-thumbnail" width="150" height="100" />
+                </div>
+            }
+            <input type="file" class="form-control" asp-for="ThumbnailFile" />
+        </div>
+
 
         <div class="mb-3">
-            <label class="form-label">Tour Name</label>
+            <label class="form-label">Tên Tour</label>
             <input type="text" class="form-control" asp-for="Tour.Name" required />
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Description</label>
+            <label class="form-label">Mô Tả</label>
             <textarea class="form-control" asp-for="Tour.Description"></textarea>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Start Date</label>
+            <label class="form-label">Ngày Bắt Đầu</label>
             <input type="date" class="form-control" asp-for="Tour.StartDate" required />
         </div>
 
         <div class="mb-3">
-            <label class="form-label">End Date</label>
+            <label class="form-label">Ngày Kết Thúc</label>
             <input type="date" class="form-control" asp-for="Tour.EndDate" required />
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Price</label>
+            <label class="form-label">Giá</label>
             <input type="number" class="form-control" asp-for="Tour.Price" required />
         </div>
 
         <!-- Hiển thị danh sách ảnh hiện tại -->
         <div class="mb-3">
-            <label class="form-label">Current Images</label>
+            <label class="form-label">Hình Ảnh Hiện Tại</label>
             <div class="d-flex flex-wrap">
                 @foreach (var image in Model.TourImages)
                 {
@@ -48,12 +59,12 @@
             </div>
         </div>
 
-        <!-- Upload ảnh mới -->
+        <!-- Tải ảnh mới -->
         <div class="mb-3">
-            <label class="form-label">Upload New Images</label>
+            <label class="form-label">Tải Ảnh Mới</label>
             <input type="file" class="form-control" asp-for="ImageFiles" multiple />
         </div>
 
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary">Cập Nhật</button>
     </form>
 </div>

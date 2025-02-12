@@ -5,7 +5,7 @@
 }
 
 <div class="container mt-4">
-    <h2 class="mb-4">Tour Details</h2>
+    <h2 class="mb-4">Chi Tiết Tour</h2>
 
     <div class="card">
         <div class="row g-0">
@@ -17,14 +17,14 @@
                             @for (int i = 0; i < Model.TourImages.Count; i++)
                             {
                                 <div class="carousel-item @(i == 0 ? "active" : "")">
-                                    <img src="@Model.TourImages[i].ImageUrl" class="d-block w-100" alt="Tour Image">
+                                    <img src="@Model.TourImages[i].ImageUrl" class="d-block w-100" alt="Hình ảnh tour">
                                 </div>
                             }
                         }
                         else
                         {
                             <div class="carousel-item active">
-                                <img src="/images/default-tour.jpg" class="d-block w-100" alt="No Image">
+                                <img src="/images/default-tour.jpg" class="d-block w-100" alt="Không có hình ảnh">
                             </div>
                         }
                     </div>
@@ -39,12 +39,12 @@
             <div class="col-md-6">
                 <div class="card-body">
                     <h3 class="card-title">@Model.Tour.Name</h3>
-                    <p class="card-text"><strong>Category:</strong> @Model.Tour.Category.Name</p>
-                    <p class="card-text"><strong>Start Date:</strong> @Model.Tour.StartDate.ToString("dd/MM/yyyy")</p>
-                    <p class="card-text"><strong>End Date:</strong> @Model.Tour.EndDate.ToString("dd/MM/yyyy")</p>
-                    <p class="card-text"><strong>Price:</strong> $@Model.Tour.Price</p>
-                    <p class="card-text"><strong>Description:</strong> @Model.Tour.Description</p>
-                    <a href="/Admin/FixedTour/Tour" class="btn btn-secondary">Back to List</a>
+                    <p class="card-text"><strong>Danh Mục:</strong> @Model.Tour.Category.Name</p>
+                    <p class="card-text"><strong>Ngày Bắt Đầu:</strong> @Model.Tour.StartDate.ToString("dd/MM/yyyy")</p>
+                    <p class="card-text"><strong>Ngày Kết Thúc:</strong> @Model.Tour.EndDate.ToString("dd/MM/yyyy")</p>
+                    <p class="card-text"><strong>Giá:</strong> $@Model.Tour.Price</p>
+                    <p class="card-text"><strong>Mô Tả:</strong> @Model.Tour.Description</p>
+                    <a href="/Admin/FixedTour/Tour" class="btn btn-secondary">Quay Lại Danh Sách</a>
                 </div>
             </div>
         </div>
@@ -52,16 +52,16 @@
 
     <hr />
 
-    <!-- Danh sách Request của hướng dẫn viên -->
-    <h3 class="mt-4">Guide Requests</h3>
+    <!-- Danh sách Yêu Cầu từ Hướng Dẫn Viên -->
+    <h3 class="mt-4">Yêu Cầu Từ Hướng Dẫn Viên</h3>
 
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Guide Name</th>
-                <th>Request Date</th>
-                <th>Status</th>
-                <th>Actions</th>
+                <th>Tên Hướng Dẫn Viên</th>
+                <th>Ngày Yêu Cầu</th>
+                <th>Trạng Thái</th>
+                <th>Thao Tác</th>
             </tr>
         </thead>
         <tbody>
@@ -76,8 +76,8 @@
                         {
                             <form method="post" asp-page-handler="UpdateRequestStatus">
                                 <input type="hidden" name="requestId" value="@request.TourGuideId" />
-                                <button type="submit" name="status" value="Approved" class="btn btn-success btn-sm">Approve</button>
-                                <button type="submit" name="status" value="Rejected" class="btn btn-danger btn-sm">Reject</button>
+                                <button type="submit" name="status" value="Đã Chấp Nhận" class="btn btn-success btn-sm">Chấp Nhận</button>
+                                <button type="submit" name="status" value="Đã Từ Chối" class="btn btn-danger btn-sm">Từ Chối</button>
                             </form>
                         }
                     </td>

@@ -5,7 +5,7 @@
 }
 
 <div class="container mt-4">
-    <h2 class="mb-4">Tour Details</h2>
+    <h2 class="mb-4">Chi Tiết Tour</h2>
 
     <div class="card">
         <div class="row g-0">
@@ -17,14 +17,14 @@
                             @for (int i = 0; i < Model.TourImages.Count; i++)
                             {
                                 <div class="carousel-item @(i == 0 ? "active" : "")">
-                                    <img src="@Model.TourImages[i].ImageUrl" class="d-block w-100" alt="Tour Image">
+                                    <img src="@Model.TourImages[i].ImageUrl" class="d-block w-100" alt="Hình ảnh tour">
                                 </div>
                             }
                         }
                         else
                         {
                             <div class="carousel-item active">
-                                <img src="/images/default-tour.jpg" class="d-block w-100" alt="No Image">
+                                <img src="/images/default-tour.jpg" class="d-block w-100" alt="Không có hình ảnh">
                             </div>
                         }
                     </div>
@@ -39,19 +39,19 @@
             <div class="col-md-6">
                 <div class="card-body">
                     <h3 class="card-title">@Model.Tour.Name</h3>
-                    <p class="card-text"><strong>Category:</strong> @Model.Tour.Category.Name</p>
-                    <p class="card-text"><strong>Start Date:</strong> @Model.Tour.StartDate.ToString("dd/MM/yyyy")</p>
-                    <p class="card-text"><strong>End Date:</strong> @Model.Tour.EndDate.ToString("dd/MM/yyyy")</p>
-                    <p class="card-text"><strong>Price:</strong> $@Model.Tour.Price</p>
-                    <p class="card-text"><strong>Description:</strong> @Model.Tour.Description</p>
+                    <p class="card-text"><strong>Danh Mục:</strong> @Model.Tour.Category.Name</p>
+                    <p class="card-text"><strong>Ngày Bắt Đầu:</strong> @Model.Tour.StartDate.ToString("dd/MM/yyyy")</p>
+                    <p class="card-text"><strong>Ngày Kết Thúc:</strong> @Model.Tour.EndDate.ToString("dd/MM/yyyy")</p>
+                    <p class="card-text"><strong>Giá:</strong> @Model.Tour.Price</p>
+                    <p class="card-text"><strong>Mô Tả:</strong> @Model.Tour.Description</p>
 
-                    <!-- Nút Request Guide Tour -->
+                    <!-- Nút Yêu Cầu Hướng Dẫn Tour -->
                     <form method="post">
                         <input type="hidden" name="TourId" value="@Model.Tour.TourId" />
-                        <button type="submit" class="btn btn-primary">Request to Guide</button>
+                        <button type="submit" class="btn btn-primary">Yêu Cầu Dẫn Tour</button>
                     </form>
 
-                    <a href="/Guide/FixedTour/Tour" class="btn btn-secondary mt-2">Back to List</a>
+                    <a href="/Guide/FixedTour/Tour" class="btn btn-secondary mt-2">Quay Lại Danh Sách</a>
                 </div>
             </div>
         </div>
