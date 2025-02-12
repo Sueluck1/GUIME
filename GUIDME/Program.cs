@@ -67,7 +67,11 @@ namespace GUIDME
             app.UseAuthentication();
             app.UseAuthorization();
 
-          
+            builder.WebHost.ConfigureKestrel(options =>
+            {
+                var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+                options.ListenAnyIP(int.Parse(port));
+            });
 
 
             app.MapRazorPages();
