@@ -68,7 +68,7 @@ namespace GUIDME
             app.UseAuthorization();
 
             // Cấu hình điểm cuối
-            var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+            var port = Environment.GetEnvironmentVariable("PORT") ?? "8181";
             app.Urls.Add($"http://*:{port}");
 
             app.MapRazorPages();
