@@ -13,10 +13,11 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 
 # Sao chép file project để restore dependencies trước (cache build)
-COPY ["GUIDME/GUIDME.csproj", "GUIDME/"]
-COPY ["DataAccess/DataAccess.csproj", "DataAccess/"]
-COPY ["Models/Models.csproj", "Models/"]
-COPY ["Repositories/Repositories.csproj", "Repositories/"]
+COPY ["./GUIDME/GUIDME.csproj", "./GUIDME/"]
+COPY ["./DataAccess/DataAccess.csproj", "./DataAccess/"]
+COPY ["./Models/Models.csproj", "./Models/"]
+COPY ["./Repositories/Repositories.csproj", "./Repositories/"]
+
 
 # Khôi phục dependencies (giúp cache hiệu quả hơn)
 RUN dotnet restore "./GUIDME/GUIDME.csproj"
