@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "eDh9vrDw1+KOz6/5eXtvWEr9p8n9BhJAcfznDjQ/vIVk+TYQGC+j+GQ8cH98krSDvuYQgNXGHis6sXyUCp8iMQ==",
+  "dgSpecHash": "VZSmKMTarbHh2DNrgs6LPr2wfy+4TeWR75yST4uTof5bGO8rXrLLBlRLjEfiCNTgrf0PAdoY1wAae8yjvHrqrA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\GUIDME.csproj",
   "expectedPackageFiles": [
@@ -43,6 +43,7 @@
     "C:\\Users\\Truong Van Tin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Truong Van Tin\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Truong Van Tin\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "C:\\Users\\Truong Van Tin\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.5\\microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512",
     "C:\\Users\\Truong Van Tin\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Truong Van Tin\\.nuget\\packages\\mimekit\\4.8.0\\mimekit.4.8.0.nupkg.sha512",
     "C:\\Users\\Truong Van Tin\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",

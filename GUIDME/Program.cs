@@ -61,21 +61,26 @@ namespace GUIDME
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
-
+            var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+            Console.WriteLine($"App is listening on port: {port}");
             app.UseRouting();
-
+            app.Lifetime.ApplicationStarted.Register(() =>
+            {
+                var logger = app.Services.GetService<ILogger<Program>>();
+                var addresses = app.Urls;
+                foreach (var address in addresses)
+                {
+                    logger.LogInformation($"Ứng dụng đang chạy trên: {address}");
+                }
+            });
             app.UseAuthentication();
             app.UseAuthorization();
 
-            builder.WebHost.ConfigureKestrel(options =>
-            {
-                var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-                options.ListenAnyIP(int.Parse(port));
-            });
+           
 
 
             app.MapRazorPages();
-            app.MapGet("/", () => "App is running!");
+            
 
             app.Run();
         }
