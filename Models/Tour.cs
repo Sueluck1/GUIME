@@ -38,6 +38,9 @@ namespace Models
         public decimal? CustomPrice { get; set; } // Giá chỉ áp dụng nếu là CustomTour
         public bool? IsApproved { get; set; } = false; // Duyệt tour nếu là CustomTour
         public bool IsActive { get; set; } = false;
+        public int MaxParticipants { get; set; }  // Số lượng người tham gia tối đa
+        public string Schedule { get; set; }  // Lịch trình tour với các mốc thời gian và hoạt động
+        public string? TransportMethod { get; set; }  // Phương tiện di chuyển (xe bus, tàu hỏa, máy bay, v.v...)
 
         public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
         public ICollection<Feedback> Feedbacks { get; set; } = new List<Feedback>();

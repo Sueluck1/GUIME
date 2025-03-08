@@ -39,7 +39,12 @@ namespace GUIDME.Pages.Customer.FixedTour
                 StartDate = tour.StartDate,
                 EndDate = tour.EndDate,
                 Description = tour.Description,
-                Category = tour.Category
+                Category = tour.Category,
+
+                // Thêm các thuộc tính mới từ Tour
+                MaxParticipants = tour.MaxParticipants, // Số lượng người tham gia tối đa
+                Schedule = tour.Schedule, // Lịch trình tour
+                TransportMethod = tour.TransportMethod // Phương tiện di chuyển
             };
 
             // Lấy danh sách ảnh của tour
@@ -48,6 +53,7 @@ namespace GUIDME.Pages.Customer.FixedTour
             return Page();
         }
     }
+
     public class TourDetailViewModel
     {
         public int TourId { get; set; }
@@ -61,7 +67,11 @@ namespace GUIDME.Pages.Customer.FixedTour
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public Category Category { get; set; }
+        public int MaxParticipants { get; set; }
+        public string Schedule { get; set; }
+        public string TransportMethod { get; set; }
     }
+
 
 }
 

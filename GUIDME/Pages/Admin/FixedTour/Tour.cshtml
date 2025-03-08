@@ -13,54 +13,68 @@
     </button>
 
     <!-- Form thêm Tour Cố Định (Mặc định ẩn) -->
-    <div class="collapse" id="addTourForm">
-        <div class="card card-body">
-            <form method="post" enctype="multipart/form-data">
-                <div class="mb-3">
-                    <label class="form-label">Tên Tour</label>
-                    <input type="text" class="form-control" name="Name" required />
-                </div>
+        <div class="collapse" id="addTourForm">
+            <div class="card card-body">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label class="form-label">Tên Tour</label>
+                        <input type="text" class="form-control" name="Name" required />
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Danh Mục</label>
-                    <select class="form-control" name="CategoryId" required>
-                        <option value="">-- Chọn Danh Mục --</option>
-                        @foreach (var category in Model.Categories)
-                        {
-                            <option value="@category.CategoryId">@category.Name</option>
-                        }
-                    </select>
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Danh Mục</label>
+                        <select class="form-control" name="CategoryId" required>
+                            <option value="">-- Chọn Danh Mục --</option>
+                            @foreach (var category in Model.Categories)
+                            {
+                                <option value="@category.CategoryId">@category.Name</option>
+                            }
+                        </select>
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Mô Tả</label>
-                    <textarea class="form-control" name="Description"></textarea>
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mô Tả</label>
+                        <textarea class="form-control" name="Description"></textarea>
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Ngày Bắt Đầu</label>
-                    <input type="date" class="form-control" name="StartDate" required />
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ngày Bắt Đầu</label>
+                        <input type="date" class="form-control" name="StartDate" required />
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Ngày Kết Thúc</label>
-                    <input type="date" class="form-control" name="EndDate" required />
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ngày Kết Thúc</label>
+                        <input type="date" class="form-control" name="EndDate" required />
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Giá</label>
-                    <input type="number" class="form-control" name="Price" required />
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Giá</label>
+                        <input type="number" class="form-control" name="Price" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Số Lượng Người Tham Gia Tối Đa</label>
+                        <input type="number" class="form-control" name="MaxParticipants" required />
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Hình Ảnh Tour</label>
-                    <input type="file" class="form-control" name="ImageFiles" multiple />
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Lịch Trình</label>
+                        <textarea class="form-control" name="Schedule" required></textarea>
+                    </div>
 
-                <button type="submit" class="btn btn-success">Thêm Tour</button>
-            </form>
+                    <div class="mb-3">
+                        <label class="form-label">Phương Tiện Di Chuyển</label>
+                        <input type="text" class="form-control" name="TransportMethod" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Hình Ảnh Tour</label>
+                        <input type="file" class="form-control" name="ImageFiles" multiple />
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Thêm Tour</button>
+                </form>
+            </div>
         </div>
-    </div>
 
     <hr />
 

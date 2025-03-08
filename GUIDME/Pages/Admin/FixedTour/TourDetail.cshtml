@@ -44,6 +44,31 @@
                     <p class="card-text"><strong>Ngày Kết Thúc:</strong> @Model.Tour.EndDate.ToString("dd/MM/yyyy")</p>
                     <p class="card-text"><strong>Giá:</strong> $@Model.Tour.Price</p>
                     <p class="card-text"><strong>Mô Tả:</strong> @Model.Tour.Description</p>
+
+                    <!-- Hiển thị số lượng người tham gia tối đa -->
+                    <p class="card-text"><strong>Số Lượng Người Tham Gia Tối Đa:</strong> @Model.Tour.MaxParticipants</p>
+
+                    <!-- Lịch Trình với tính năng Collapse (ẩn/hiện) -->
+                    <p class="card-text"><strong>Lịch Trình:</strong></p>
+                    <div>
+                        <!-- Rút gọn lịch trình -->
+                        <p id="shortSchedule" class="card-text">@Model.Tour.Schedule.Substring(0, Math.Min(200, Model.Tour.Schedule.Length))...</p>
+
+                        <!-- Nút để mở rộng/thu nhỏ lịch trình -->
+                        <button class="btn btn-link p-0" data-bs-toggle="collapse" data-bs-target="#fullSchedule">
+                            Xem thêm
+                        </button>
+                    </div>
+
+                    <!-- Phần đầy đủ lịch trình sẽ hiển thị khi nhấn Xem thêm -->
+                    <div id="fullSchedule" class="collapse">
+                        <div class="tour-schedule">
+                            @Html.Raw(Model.Tour.Schedule?.Replace("\n", "<br>"))  <!-- Thay thế \n thành <br> để hiển thị xuống dòng -->
+                        </div>
+                    </div>
+
+                    <p class="card-text"><strong>Phương Tiện Di Chuyển:</strong> @Model.Tour.TransportMethod</p>
+
                     <a href="/Admin/FixedTour/Tour" class="btn btn-secondary">Quay Lại Danh Sách</a>
                 </div>
             </div>

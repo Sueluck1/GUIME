@@ -1,0 +1,39 @@
+﻿@page
+@model AdminTourGuideRequestsModel
+@{
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Danh sách yêu cầu làm Hướng dẫn viên";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (Model.UserRequests == null || !Model.UserRequests.Any())
+{
+    <p>Chưa có request nào được gửi.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Họ và tên</th>
+                <th>Email</th>
+                <th>Trạng thái</th>
+                <th>Chi Tiết</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var request in Model.UserRequests)
+            {
+                <tr>
+                    <td>@request.Name</td>
+                    <td>@request.Email</td>
+                    <td>@(request.IsRequest ? "Chờ duyệt" : "Đã duyệt")</td>
+                    <td>
+                        <a href="/Admin/TourGuideDetail?userId=@request.UserId" class="btn btn-info">Chi tiết</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

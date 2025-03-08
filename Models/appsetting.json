@@ -10,4 +10,6 @@
   "ConnectionStrings": {
     "DefaultConnection": "Server=tcp:guidmedb.database.windows.net,1433;Initial Catalog=MyDatabase;Persist Security Info=False;User ID=sqladmin;Password=Vantin123@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;"
   }
+
+
 }

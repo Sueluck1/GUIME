@@ -37,22 +37,23 @@ namespace GUIDME.Pages.Admin.FixedTour
 
         public async Task<IActionResult> OnPostAsync()
         {
-           
-
             var newTour = new Tour
             {
                 Name = Request.Form["Name"],
-                CategoryId = int.Parse(Request.Form["CategoryId"]), // Lưu CategoryId
+                CategoryId = int.Parse(Request.Form["CategoryId"]),
                 Description = Request.Form["Description"],
                 StartDate = DateTime.Parse(Request.Form["StartDate"]),
                 EndDate = DateTime.Parse(Request.Form["EndDate"]),
                 Price = decimal.Parse(Request.Form["Price"]),
+                MaxParticipants = int.Parse(Request.Form["MaxParticipants"]),  // New field
+                Schedule = Request.Form["Schedule"],  // New field
+                TransportMethod = Request.Form["TransportMethod"],  // New field
                 Type = Tour.TourType.Fixed
             };
 
             await _tourRepository.Add(newTour);
 
-            // Lưu ảnh nếu có
+            // Save images if provided
             if (ImageFiles != null && ImageFiles.Count > 0)
             {
                 foreach (var image in ImageFiles)
@@ -77,7 +78,6 @@ namespace GUIDME.Pages.Admin.FixedTour
 
             return RedirectToPage("/Admin/FixedTour/Tour");
         }
-
 
         public async Task<IActionResult> OnGetToggleActiveAsync(int id)
         {

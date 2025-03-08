@@ -47,7 +47,21 @@
                 <p><strong>🕒 Thời Gian:</strong> @Model.Tour.Duration</p>
                 <p><strong>📅 Ngày Bắt Đầu:</strong> @Model.Tour.StartDate.ToString("dd/MM/yyyy")</p>
                 <p><strong>📅 Ngày Kết Thúc:</strong> @Model.Tour.EndDate.ToString("dd/MM/yyyy")</p>
-                <p><strong> Giá:</strong> <span class="text-danger fw-bold">$@Model.Tour.Price</span></p>
+                <p><strong> 💵 Giá:</strong> <span class="text-danger fw-bold">$@Model.Tour.Price</span></p>
+
+                <!-- Hiển thị thông tin Số Lượng Người Tham Gia Tối Đa -->
+                <p><strong>👥 Số Lượng Người Tham Gia Tối Đa:</strong> @Model.Tour.MaxParticipants</p>
+
+                <!-- Hiển thị lịch trình dưới dạng HTML -->
+                <p><strong>📜 Lịch Trình:</strong></p>
+                <div class="tour-schedule">
+                    @Html.Raw(Model.Tour.Schedule?.Replace("\n", "<br>"))  <!-- Thay thế \n thành <br> để hiển thị xuống dòng -->
+                </div>
+
+                <!-- Hiển thị phương tiện di chuyển -->
+                <p><strong>🚗 Phương Tiện Di Chuyển:</strong> @Model.Tour.TransportMethod</p>
+
+                <!-- Mô Tả -->
                 <p class="mt-3"><strong>📖 Mô Tả:</strong></p>
                 <p>@Model.Tour.Description</p>
             </div>
@@ -62,7 +76,11 @@
                 </p>
                 <p><i class="fas fa-user"></i> <strong>Khách hàng hài lòng:</strong> @((Model.Tour.Rating * 20).ToString("0"))%</p>
                 <hr>
-                <a href="/Customer/FixedTour/Tour" class="btn btn-outline-secondary w-100">🔙 Quay Lại</a>
+
+                <!-- Thêm nút đăng ký tour (nếu cần thiết) -->
+                <a href="/Customer/FixedTour/Register/@Model.Tour.TourId" class="btn btn-success w-100">Đăng Ký Tour</a>
+
+                <a href="/Customer/FixedTour/Tour" class="btn btn-outline-secondary w-100 mt-2">🔙 Quay Lại</a>
             </div>
         </div>
     </div>

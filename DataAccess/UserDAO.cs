@@ -9,14 +9,16 @@ namespace DataAccess
     {
         public async Task<IEnumerable<User>> GetAllUsers()
         {
-            return await _context.Users.ToListAsync();
+            return await _context.Users
+                          .Include(u => u.Certificates) // Bao gồm dữ liệu Certificates
+                          .ToListAsync();
         }
 
         public async Task<User> GetUserById(int id)
         {
             return await _context.Users.FirstOrDefaultAsync(u => u.UserId == id);
         }
-
+        
         public async Task Add(User user)
         {
             _context.Users.Add(user);

@@ -1,0 +1,51 @@
+﻿@page
+@model GUIDME.Pages.Customer.CreateTourGuideRequestModel
+@{
+    Layout = "/Pages/Shared/_CustomerLayout.cshtml";
+    ViewData["PageTitle"] = "Đăng ký làm Hướng dẫn viên";
+}
+
+<section class="profile_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <h2>Đăng ký làm Hướng Dẫn Viên</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <div class="card-title mb-4">
+                            <h3>Thông tin yêu cầu</h3>
+                            <p>Vui lòng nhập đầy đủ thông tin và tải lên các tài liệu cần thiết để đăng ký làm hướng dẫn viên du lịch.</p>
+                        </div>
+
+                        <form method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="CCCDFront">Ảnh mặt trước CCCD</label>
+                                <input type="file" class="form-control" id="CCCDFront" name="CCCDFrontFile" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="CCCDBack">Ảnh mặt sau CCCD</label>
+                                <input type="file" class="form-control" id="CCCDBack" name="CCCDBackFile" required />
+                            </div>
+
+                            <!-- Chức năng tải lên nhiều chứng chỉ -->
+                            <div class="form-group">
+                                <label for="Certificates">Chứng chỉ</label>
+                                <input type="file" class="form-control" id="Certificates" name="CertificateFiles" multiple required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="CertificateNames">Tên chứng chỉ</label>
+                                <input type="text" class="form-control" id="CertificateNames" name="CertificateNames" placeholder="Nhập tên chứng chỉ, cách nhau dấu phẩy" required />
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Gửi yêu cầu</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

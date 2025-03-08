@@ -10,7 +10,8 @@
 
     <!-- Favicon -->
     <link href="/TemplateFiles/img/favicon.ico" rel="icon">
-
+    <script src="~/js/notifications.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,7 +89,8 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="userMenu">
                             <li><a class="dropdown-item" href="/Customer/Profile">Thông Tin Cá Nhân</a></li>
-                            <li><a class="dropdown-item" href="/Booking/History">Lịch Sử Đặt Tour</a></li>
+                           
+                            <li><a class="dropdown-item" href="/Customer/CreateTourGuideRequest">Đăng Ký Thành hướng dẫn viên</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li>
                                 <a href="/Authentication/Logout" class="dropdown-item text-danger">
@@ -149,7 +151,10 @@
     <!-- Nút quay lại đầu trang -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+
     <!-- Thư viện JavaScript -->
+ 
+
     <script src="/TemplateFiles/js/jquery-3.4.1.min.js"></script>
     <script src="/TemplateFiles/js/bootstrap.bundle.min.js"></script>
     <script src="/TemplateFiles/lib/wow/wow.min.js"></script>

@@ -15,9 +15,12 @@ namespace Models
         [Required]
         [MaxLength(255)]
         public string Name { get; set; }
+        [MaxLength(500)]
+        public string? ImageUrlCCCDFront { get; set; } 
 
-        [MaxLength(255)]
-        public string? Certification { get; set; }
+        [MaxLength(500)]
+        public string? ImageUrlCCCDBack { get; set; }
+       
 
         public DateTime? DateOfBirth { get; set; }
 
@@ -51,9 +54,11 @@ namespace Models
         public string? VerificationCode { get; set; }
         public bool IsEmailVerified { get; set; } = false;
         public bool IsDeleted { get; set; } = false;
+        public bool IsRequest { get; set; } = false;
         public ICollection<Tour> Tours { get; set; } // Quan hệ với Tour
         public ICollection<Booking> Bookings { get; set; } // Quan hệ với Booking
         public ICollection<Feedback> Feedbacks { get; set; } // Quan hệ với Feedback
         public ICollection<Rating> Ratings { get; set; } // Quan hệ với Rating
+        public ICollection<Certificate> Certificates { get; set; }
     }
 }

@@ -7,6 +7,7 @@ namespace Models
     public class GuidmeDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Certificate> Certificates { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Tour> Tours { get; set; }
         public DbSet<Booking> Bookings { get; set; }
@@ -27,13 +28,16 @@ namespace Models
             {
                 var configuration = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("appsetting.json")
+                    .AddJsonFile("appsettings.json")
                     .Build();
 
                 string connectionString = configuration.GetConnectionString("DefaultConnection");
-                optionsBuilder.UseSqlServer(connectionString);
+
+                optionsBuilder.UseSqlServer(connectionString, options =>
+                    options.EnableRetryOnFailure());  // Bật retry logic
             }
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -172,68 +176,82 @@ namespace Models
            .WithMany(t => t.TourImages)
            .HasForeignKey(ti => ti.TourId)
            .OnDelete(DeleteBehavior.Cascade);
+            // ==================== Quan hệ giữa User và Certificate ====================
+            // Quan hệ giữa User và Certificate (1 User có nhiều chứng chỉ)
+            modelBuilder.Entity<Certificate>()
+            .HasOne(c => c.User)
+            .WithMany(u => u.Certificates)
+            .HasForeignKey(c => c.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         }
         public void SeedData()
         {
-            if (!Users.Any()) // Kiểm tra nếu chưa có dữ liệu
+            if (!Users.Any())
             {
                 Users.AddRange(new List<User>
-        {
-            new User { Name = "Nguyen Van A", Username = "nguyenvana", Password = "password123", Email = "a@example.com", IsDeleted = false },
-            new User { Name = "Tran Thi B", Username = "tranthib", Password = "password123", Email = "b@example.com", IsDeleted = false }
-        });
+            {
+                new User { Name = "Nguyen Van A", Username = "nguyenvana", Password = "password123", Email = "a@example.com", IsDeleted = false },
+                new User { Name = "Tran Thi B", Username = "tranthib", Password = "password123", Email = "b@example.com", IsDeleted = false }
+            });
             }
 
             if (!Categories.Any())
             {
                 Categories.AddRange(new List<Category>
-        {
-            new Category { Name = "Du lịch biển", ImageUrl = "beach.jpg", IsActive = true },
-            new Category { Name = "Du lịch núi", ImageUrl = "mountain.jpg", IsActive = true }
-        });
+            {
+                new Category { Name = "Du lịch biển", ImageUrl = "beach.jpg", IsActive = true },
+                new Category { Name = "Du lịch núi", ImageUrl = "mountain.jpg", IsActive = true }
+            });
             }
 
             if (!Tours.Any())
             {
                 Tours.AddRange(new List<Tour>
-        {
-            new Tour { Name = "Tour Nha Trang 3 ngày", CategoryId = 1, Price = 5000000, IsActive = false },
-            new Tour { Name = "Tour Sapa 5 ngày", CategoryId = 2, Price = 7000000, IsActive = false }
-        });
+            {
+                new Tour { Name = "Tour Nha Trang 3 ngày", CategoryId = 1, Price = 5000000, MaxParticipants = 20, Schedule = "08:00 AM: Đón khách tại khách sạn, 09:00 AM: Tham quan Chợ Đêm...", TransportMethod = "Xe bus", IsActive = false },
+                new Tour { Name = "Tour Sapa 5 ngày", CategoryId = 2, Price = 7000000, MaxParticipants = 15, Schedule = "07:00 AM: Đón khách tại khách sạn, 09:00 AM: Tham quan...", TransportMethod = "Tàu hỏa", IsActive = false }
+            });
             }
 
             if (!Bookings.Any())
             {
                 Bookings.AddRange(new List<Booking>
-        {
-            new Booking { UserId = 1, TourId = 1, BookingDate = DateTime.Now, TourDate = DateTime.Now.AddDays(7), NumberOfPeople = 2, TotalPrice = 10000000, IsDeleted = false },
-            new Booking { UserId = 2, TourId = 2, BookingDate = DateTime.Now, TourDate = DateTime.Now.AddDays(10), NumberOfPeople = 1, TotalPrice = 7000000, IsDeleted = false }
-        });
+            {
+                new Booking { UserId = 1, TourId = 1, BookingDate = DateTime.Now, TourDate = DateTime.Now.AddDays(7), NumberOfPeople = 2, TotalPrice = 10000000, IsDeleted = false },
+                new Booking { UserId = 2, TourId = 2, BookingDate = DateTime.Now, TourDate = DateTime.Now.AddDays(10), NumberOfPeople = 1, TotalPrice = 7000000, IsDeleted = false }
+            });
             }
 
             if (!Ratings.Any())
             {
                 Ratings.AddRange(new List<Rating>
-        {
-            new Rating { UserId = 1, TourId = 1, Score = 5, Comment = "Rất tốt!", IsDeleted = false },
-            new Rating { UserId = 2, TourId = 2, Score = 4, Comment = "Dịch vụ ổn.", IsDeleted = false }
-        });
+            {
+                new Rating { UserId = 1, TourId = 1, Score = 5, Comment = "Rất tốt!", IsDeleted = false },
+                new Rating { UserId = 2, TourId = 2, Score = 4, Comment = "Dịch vụ ổn.", IsDeleted = false }
+            });
             }
 
             if (!Feedbacks.Any())
             {
                 Feedbacks.AddRange(new List<Feedback>
-        {
-            new Feedback { UserId = 1, TourId = 1, Content = "Hướng dẫn viên nhiệt tình.", IsDeleted = false },
-            new Feedback { UserId = 2, TourId = 2, Content = "Cảnh đẹp, giá hợp lý.", IsDeleted = false }
-        });
+            {
+                new Feedback { UserId = 1, TourId = 1, Content = "Hướng dẫn viên nhiệt tình.", IsDeleted = false },
+                new Feedback { UserId = 2, TourId = 2, Content = "Cảnh đẹp, giá hợp lý.", IsDeleted = false }
+            });
             }
 
-            SaveChanges(); // Lưu thay đổi vào database
+            // Dữ liệu mẫu cho Certificates
+            if (!Certificates.Any())
+            {
+                Certificates.AddRange(new List<Certificate>
+            {
+                new Certificate { CertificateName = "Chứng chỉ Hướng dẫn viên du lịch", UserId = 1, CertificateImageUrl = "image1.jpg" },
+                new Certificate { CertificateName = "Chứng chỉ An toàn lao động", UserId = 2, CertificateImageUrl = "image2.jpg" }
+            });
+            }
+
+            SaveChanges();
         }
-
-
-
     }
 }

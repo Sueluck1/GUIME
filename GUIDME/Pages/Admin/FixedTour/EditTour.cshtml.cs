@@ -54,32 +54,33 @@ namespace GUIDME.Pages.Admin.FixedTour
                 return NotFound();
             }
 
-            // Cập nhật thông tin tour
+            // Update tour details
             existingTour.Name = Tour.Name;
             existingTour.Description = Tour.Description;
             existingTour.StartDate = Tour.StartDate;
             existingTour.EndDate = Tour.EndDate;
             existingTour.Price = Tour.Price;
+            existingTour.MaxParticipants = Tour.MaxParticipants;  // New field
+            existingTour.Schedule = Tour.Schedule;  // New field
+            existingTour.TransportMethod = Tour.TransportMethod;  // New field
 
-            // Xử lý tải ảnh Thumbnail nếu có
+            // Handle thumbnail image if provided
             if (ThumbnailFile != null)
             {
                 var thumbnailFileName = $"{Guid.NewGuid()}_{ThumbnailFile.FileName}";
                 var thumbnailFilePath = Path.Combine("wwwroot/uploads/Thumbnails", thumbnailFileName);
 
-                // Lưu file ảnh vào thư mục
                 using (var stream = new FileStream(thumbnailFilePath, FileMode.Create))
                 {
                     await ThumbnailFile.CopyToAsync(stream);
                 }
 
-                // Lưu đường dẫn ảnh Thumbnail vào database
                 existingTour.ThumbnailUrl = $"/uploads/Thumbnails/{thumbnailFileName}";
             }
 
             await _tourRepository.Update(existingTour);
 
-            // Xử lý upload ảnh mới nếu có
+            // Handle new images if provided
             if (ImageFiles != null && ImageFiles.Count > 0)
             {
                 foreach (var image in ImageFiles)
@@ -104,5 +105,6 @@ namespace GUIDME.Pages.Admin.FixedTour
 
             return RedirectToPage("/Admin/FixedTour/Tour");
         }
+
     }
 }

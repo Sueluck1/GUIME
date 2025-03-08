@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Repositories;
 using Models;
 using GUIDME.Pages.Authenthication.Service;
+using Microsoft.Extensions.Options;
 
 namespace GUIDME
 {
@@ -30,6 +31,7 @@ namespace GUIDME
             builder.Services.AddScoped<IRatingRepository, RatingRepository>();
             builder.Services.AddScoped<ITourImageRepository, TourImageRepository>();
             builder.Services.AddScoped<ITourGuideRepository, TourGuideRepository>();
+            builder.Services.AddScoped<ICertificateRepository, CertificateRepository>();
             // Thêm các dịch vụ
             builder.Services.AddScoped<IEmailService, EmailService>();
             
@@ -46,6 +48,8 @@ namespace GUIDME
             builder.WebHost.ConfigureKestrel(serverOptions =>
             {
                 serverOptions.ListenAnyIP(8080); // Luôn lắng nghe trên cổng 8080
+                serverOptions.ListenAnyIP(8081, listenOptions => listenOptions.UseHttps());
+
             });
             var app = builder.Build();
 

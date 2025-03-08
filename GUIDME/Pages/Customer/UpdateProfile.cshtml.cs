@@ -78,7 +78,7 @@ namespace GUIDME.Pages.Customer
             }
 
             await _userRepository.Update(existingUser);
-
+            TempData["SuccessMessage"] = "Profile updated successfully!";
             return RedirectToPage("/Customer/Profile");
         }
     }

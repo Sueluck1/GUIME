@@ -27,30 +27,38 @@ namespace GUIDME.Pages.Admin.FixedTour
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
+            // Fetch the tour by its ID
             Tour = await _tourRepository.GetTourById(id);
             if (Tour == null)
             {
-                return NotFound();
+                return NotFound(); // Return 404 if tour not found
             }
 
+            // Fetch images associated with the tour
             TourImages = (await _tourImageRepository.GetTourImagesByTourId(id)).ToList();
+
+            // Fetch guide requests associated with the tour
             TourGuideRequests = (await _tourGuideRepository.GetAllTourGuides())
                                 .Where(r => r.TourId == id)
                                 .ToList();
-            return Page();
+            return Page(); // Return the page with the tour details
         }
 
+        // Method to update the status of a tour guide's request
         public async Task<IActionResult> OnPostUpdateRequestStatusAsync(int requestId, string status)
         {
+            // Fetch the tour guide request by ID
             var request = await _tourGuideRepository.GetTourGuideById(requestId);
             if (request == null || request.TourId == null)
             {
-                return NotFound(); 
+                return NotFound(); // Return 404 if request not found
             }
 
+            // Update the status of the guide's request
             await _tourGuideRepository.UpdateRequestStatus(requestId, status);
 
-            return RedirectToPage(new { id = request.TourId }); // Sử dụng request.TourId thay vì Tour.TourId
+            // Redirect to the same tour detail page after updating the status
+            return RedirectToPage("/Admin/FixedTour/TourDetail", new { id = request.TourId });
         }
     }
 }

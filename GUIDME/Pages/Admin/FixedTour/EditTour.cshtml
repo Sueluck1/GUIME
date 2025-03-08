@@ -9,6 +9,7 @@
 
     <form method="post" enctype="multipart/form-data">
         <input type="hidden" asp-for="Tour.TourId" />
+
         <div class="mb-3">
             <label class="form-label">Ảnh Thumbnail</label>
             @if (!string.IsNullOrEmpty(Model.Tour.ThumbnailUrl))
@@ -19,7 +20,6 @@
             }
             <input type="file" class="form-control" asp-for="ThumbnailFile" />
         </div>
-
 
         <div class="mb-3">
             <label class="form-label">Tên Tour</label>
@@ -44,6 +44,22 @@
         <div class="mb-3">
             <label class="form-label">Giá</label>
             <input type="number" class="form-control" asp-for="Tour.Price" required />
+        </div>
+
+        <!-- New Fields -->
+        <div class="mb-3">
+            <label class="form-label">Số Lượng Người Tham Gia Tối Đa</label>
+            <input type="number" class="form-control" asp-for="Tour.MaxParticipants" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Lịch Trình</label>
+            <textarea class="form-control" asp-for="Tour.Schedule" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Phương Tiện Di Chuyển</label>
+            <input type="text" class="form-control" asp-for="Tour.TransportMethod" />
         </div>
 
         <!-- Hiển thị danh sách ảnh hiện tại -->
