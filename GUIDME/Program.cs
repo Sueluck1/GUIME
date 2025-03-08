@@ -48,7 +48,7 @@ namespace GUIDME
             builder.WebHost.ConfigureKestrel(serverOptions =>
             {
                 serverOptions.ListenAnyIP(8080); // Luôn lắng nghe trên cổng 8080
-                serverOptions.ListenAnyIP(8081, listenOptions => listenOptions.UseHttps());
+              
 
             });
             var app = builder.Build();
