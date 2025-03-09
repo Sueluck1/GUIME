@@ -77,8 +77,15 @@
                 <p><i class="fas fa-user"></i> <strong>Khách hàng hài lòng:</strong> @((Model.Tour.Rating * 20).ToString("0"))%</p>
                 <hr>
 
-                <!-- Thêm nút đăng ký tour (nếu cần thiết) -->
-                <a href="/Customer/FixedTour/Register/@Model.Tour.TourId" class="btn btn-success w-100">Đăng Ký Tour</a>
+                <!-- Thêm form đăng ký tour -->
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="NumberOfPeople" class="form-label">Số Lượng Người Tham Gia</label>
+                        <input type="number" class="form-control" id="NumberOfPeople" name="NumberOfPeople" min="1" max="@Model.Tour.MaxParticipants" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100">Đăng Ký Tour</button>
+                </form>
 
                 <a href="/Customer/FixedTour/Tour" class="btn btn-outline-secondary w-100 mt-2">🔙 Quay Lại</a>
             </div>

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Models;
 using Repositories;
+using System.Security.Claims;
 
 namespace GUIDME.Pages.Customer.FixedTour
 {
@@ -9,12 +10,17 @@ namespace GUIDME.Pages.Customer.FixedTour
     {
         private readonly ITourRepository _tourRepository;
         private readonly ITourImageRepository _tourImageRepository;
-
-        public DetailModel(ITourRepository tourRepository, ITourImageRepository tourImageRepository)
+        private readonly IBookingRepository _bookingRepository;
+        private readonly IUserRepository _userRepository;
+        public DetailModel(ITourRepository tourRepository, IBookingRepository bookingRepository, IUserRepository userRepository,ITourImageRepository tourImageRepository)
         {
+            _bookingRepository = bookingRepository;
+            _userRepository = userRepository;
             _tourRepository = tourRepository;
             _tourImageRepository = tourImageRepository;
         }
+        [BindProperty]
+        public int NumberOfPeople { get; set; }
 
         public TourDetailViewModel Tour { get; set; }
         public List<TourImage> TourImages { get; set; } = new List<TourImage>();
@@ -51,6 +57,40 @@ namespace GUIDME.Pages.Customer.FixedTour
             TourImages = (await _tourImageRepository.GetTourImagesByTourId(id)).ToList();
 
             return Page();
+        }
+        public async Task<IActionResult> OnPostAsync(int id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
+            {
+                return RedirectToPage("/Authentication/Login");
+            }
+            // Lấy thông tin tour
+            var tour = await _tourRepository.GetTourById(id);
+            if (tour == null || !tour.IsActive)
+            {
+                return NotFound();
+            }
+
+            // Lấy thông tin người dùng (Giả sử userId = 1, có thể thay bằng cách lấy thông tin người dùng thực tế)
+            var user = await _userRepository.GetUserById(int.Parse(userId));
+
+            // Tạo Booking
+            var booking = new Booking
+            {
+                TourId = tour.TourId,
+                UserId = user.UserId,
+                NumberOfPeople = NumberOfPeople,
+                TotalPrice = tour.Price ?? 0 * NumberOfPeople,
+                BookingDate = DateTime.Now,
+                Status = "Pending" // Trạng thái "Chờ thanh toán"
+            };
+
+            // Lưu vào cơ sở dữ liệu
+            await _bookingRepository.Add(booking);
+            TempData["SuccessMessage"] = "Bạn đã đặt tour thành công. Vui lòng vào Lịch sử Đặt chỗ để thực hiện thanh toán.";
+            // Chuyển hướng đến trang thanh toán hoặc một trang xác nhận khác
+            return RedirectToPage("/Customer/Profile");
         }
     }
 

@@ -78,7 +78,7 @@ namespace GUIDME.Pages.Customer
             }
 
             await _userRepository.Update(existingUser);
-            TempData["SuccessMessage"] = "Profile updated successfully!";
+            TempData["SuccessMessage"] = "Thông tin cá nhân đã được cập nhật thành công!";
             return RedirectToPage("/Customer/Profile");
         }
     }

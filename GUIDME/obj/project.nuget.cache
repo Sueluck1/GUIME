@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VZSmKMTarbHh2DNrgs6LPr2wfy+4TeWR75yST4uTof5bGO8rXrLLBlRLjEfiCNTgrf0PAdoY1wAae8yjvHrqrA==",
+  "dgSpecHash": "/fYMkPMDYgsuRHrnyOrXlsetGDwAzM+GZYVhKjxbSv0nlZ9UT+5qr6nnotsVtNlMso0o/j52tPZfUi+84EIL0Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Truong Van Tin\\source\\repos\\GUIDME\\GUIDME\\GUIDME.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,8 @@
     "C:\\Users\\Truong Van Tin\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.5\\microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512",
     "C:\\Users\\Truong Van Tin\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Truong Van Tin\\.nuget\\packages\\mimekit\\4.8.0\\mimekit.4.8.0.nupkg.sha512",
+    "C:\\Users\\Truong Van Tin\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Truong Van Tin\\.nuget\\packages\\payos\\1.0.9\\payos.1.0.9.nupkg.sha512",
     "C:\\Users\\Truong Van Tin\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\Truong Van Tin\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\Truong Van Tin\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",

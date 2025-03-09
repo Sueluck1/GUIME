@@ -8,10 +8,9 @@
 @if (TempData["SuccessMessage"] != null)
 {
     <script>
-
         Swal.fire({
             title: 'Success!',
-            text: '@TempData["SuccessMessage"]',
+            text: '@Html.Raw(TempData["SuccessMessage"].ToString())',
             icon: 'success',
             confirmButtonText: 'OK'
         });
@@ -22,13 +21,14 @@
     <script>
         Swal.fire({
             title: 'Error!',
-            text: '@TempData["ErrorMessage"]',
+            text: '@Html.Raw(TempData["ErrorMessage"].ToString())',
             icon: 'error',
             confirmButtonText: 'OK'
         });
     </script>
 }
-<section class="profile_section layout_padding">    
+
+<section class="profile_section layout_padding">
     <div class="container">
         <div class="heading_container">
             <h2>Thông Tin Người Dùng</h2>
@@ -103,8 +103,6 @@
                     : "bg-warning text-dark")">
                                                                     @booking.Status
                                                                 </span>
-
-
                                                             </p>
                                                             <p><strong>Ngày đặt:</strong> @booking.BookingDate.ToString("dd/MM/yyyy")</p>
                                                             <p><strong>Ngày đi tour:</strong> @booking.TourDate.ToString("dd/MM/yyyy")</p>
@@ -129,6 +127,15 @@
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
+
+                                                            <!-- Nút thanh toán nếu trạng thái là Pending -->
+                                                            @if (booking.Status == "Pending")
+                                                            {
+                                                                <form method="post" asp-page-handler="ProcessPayment">
+                                                                    <input type="hidden" name="bookingId" value="@booking.BookingId" />
+                                                                    <button type="submit" class="btn btn-primary btn-sm">Thanh toán</button>
+                                                                </form>
+                                                            }
 
                                                             <!-- Nút hủy tour nếu chưa hoàn thành -->
                                                             @if (booking.Status == "Pending")

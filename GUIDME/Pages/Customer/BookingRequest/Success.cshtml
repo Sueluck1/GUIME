@@ -1,0 +1,26 @@
+﻿@page
+@model GUIDME.Pages.Customer.BookingRequest.SuccessModel
+@{
+    Layout = "/Pages/Shared/_CustomerLayout.cshtml";
+    ViewData["PageTitle"] = "Payment Success";
+}
+
+<section class="success_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <h2>Thanh toán thành công</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h5>Thanh toán của bạn đã được xử lý thành công!</h5>
+                        <p>Cảm ơn bạn đã hoàn thành thanh toán. Đặt tour của bạn đã được xác nhận.</p>
+                        <a href="/Customer/Profile" class="btn btn-success">Xem lịch sử đặt tour</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

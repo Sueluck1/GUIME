@@ -4,6 +4,7 @@ using Repositories;
 using Models;
 using GUIDME.Pages.Authenthication.Service;
 using Microsoft.Extensions.Options;
+using Net.payOS;
 
 namespace GUIDME
 {
@@ -16,7 +17,7 @@ namespace GUIDME
             // Thêm các dịch vụ vào container
             builder.Services.AddRazorPages();
             builder.Services.AddSignalR();
-
+            builder.Services.AddHttpContextAccessor();
             // Cấu hình DbContext
             builder.Services.AddDbContext<GuidmeDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -34,7 +35,7 @@ namespace GUIDME
             builder.Services.AddScoped<ICertificateRepository, CertificateRepository>();
             // Thêm các dịch vụ
             builder.Services.AddScoped<IEmailService, EmailService>();
-            
+            builder.Services.AddSingleton(new PayOS("a36942ab-9ada-42dc-a8c2-82b89903221a", "703db152-0612-4fe2-9ab5-51870f6bbcf8", "c727ba2c641fe17a356a16af75e5bf21622a8bf5d7e51ecb3920f4bac2dcce23"));
 
             // Cấu hình xác thực Cookie
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -48,7 +49,7 @@ namespace GUIDME
             builder.WebHost.ConfigureKestrel(serverOptions =>
             {
                 serverOptions.ListenAnyIP(8080); // Luôn lắng nghe trên cổng 8080
-              
+                
 
             });
             var app = builder.Build();
