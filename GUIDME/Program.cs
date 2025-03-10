@@ -49,7 +49,7 @@ namespace GUIDME
             builder.WebHost.ConfigureKestrel(serverOptions =>
             {
                 serverOptions.ListenAnyIP(8080); // Luôn lắng nghe trên cổng 8080
-                
+               
 
             });
             var app = builder.Build();
@@ -81,7 +81,8 @@ namespace GUIDME
             app.UseAuthentication();
             app.UseAuthorization();
 
-           
+
+            app.MapGet("/", () => Results.Redirect("/Customer/Index"));
 
 
             app.MapRazorPages();
