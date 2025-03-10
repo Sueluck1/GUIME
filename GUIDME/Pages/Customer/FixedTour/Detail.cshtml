@@ -47,7 +47,7 @@
                 <p><strong>🕒 Thời Gian:</strong> @Model.Tour.Duration</p>
                 <p><strong>📅 Ngày Bắt Đầu:</strong> @Model.Tour.StartDate.ToString("dd/MM/yyyy")</p>
                 <p><strong>📅 Ngày Kết Thúc:</strong> @Model.Tour.EndDate.ToString("dd/MM/yyyy")</p>
-                <p><strong> 💵 Giá:</strong> <span class="text-danger fw-bold">$@Model.Tour.Price</span></p>
+                <p><strong> 💵 Giá:</strong> <span class="text-danger fw-bold">@Model.Tour.Price.ToString("C0", new System.Globalization.CultureInfo("vi-VN"))</span></p>
 
                 <!-- Hiển thị thông tin Số Lượng Người Tham Gia Tối Đa -->
                 <p><strong>👥 Số Lượng Người Tham Gia Tối Đa:</strong> @Model.Tour.MaxParticipants</p>

@@ -47,7 +47,8 @@
                         <p class="text-muted">
                             ⏳ @tour.Duration
                         </p>
-                        <p class="fw-bold">Từ @tour.Price</p>
+                        <p class="fw-bold">Từ @tour.Price.ToString("C0", new System.Globalization.CultureInfo("vi-VN"))</p>
+
                         <a href="/Customer/FixedTour/Detail/@tour.TourId" class="btn btn-outline-primary w-100">Xem Chi Tiết</a>
                     </div>
                 </div>
